@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Products</h1>
+    <p *ngIf="!products || products.length ==0; else elseBlock">No Products!</p>
+
+    <ng-template #elseBlock>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Colour</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <th>{{ product.id }}</th>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.type }}</td>
+                    <td>{{ product.colour }}</td>
+                    <td>{{ product.price | currency:  '&#x20B9;&nbsp;' }}</td>
+                    <td><a [routerLink]="['/products','edit',product.id]">Edit</a></td>
+                    <td>Delete</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </ng-template>
+
+</div>

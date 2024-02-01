@@ -1,0 +1,24 @@
+
+
+<div class="container">
+    <h1>Update product details</h1>
+    <form (ngSubmit)="updateProduct()">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="updateProductRequest.name">
+        </div>
+        <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <input type="text" class="form-control" id="type" name="type" [(ngModel)]="updateProductRequest.type">
+        </div>
+        <div class="mb-3">
+            <label for="colour" class="form-label">Colour</label>
+            <input type="text" class="form-control" id="colour" name="colour" [(ngModel)]="updateProductRequest.colour">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" name="price" [(ngModel)]="updateProductRequest.price">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
